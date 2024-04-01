@@ -23,7 +23,7 @@
               };
             };
             root = {
-              name = "rooooooooooooooooooooot";
+              name = "root";
               priority = 2;
               type = "8300";
               size = "100%";
