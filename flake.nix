@@ -15,7 +15,7 @@
     };
   };
 
-  outputs = { nixpkgs, disko, home-manager, ... }:
+  outputs = { nixpkgs, disko, ... }:
   {
     nixosConfigurations = {
       thor = nixpkgs.lib.nixosSystem {
@@ -25,11 +25,11 @@
           { disko.devices.disk.main.device = "/dev/nvme0n1"; }
           ./hosts/thor
 
-         home-manager.nixosModules.home-manager {
-           home-manager.useGlobalPkgs = true;
-           home-manager.useUserPackages = true;
-           home-manager.users.matthias = import ./home-manager/thor.nix;
-         }
+         # home-manager.nixosModules.home-manager {
+         #   home-manager.useGlobalPkgs = true;
+         #   home-manager.useUserPackages = true;
+         #   home-manager.users.matthias = import ./home-manager/thor.nix;
+         # }
         ];
       };
     };
