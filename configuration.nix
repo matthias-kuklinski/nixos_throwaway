@@ -41,6 +41,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [];
+    initialPassword = "p";
   };
 
   # List packages installed in system profile. To search, run:
@@ -66,6 +67,7 @@
   users.users.root.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMMmlA8u2fb4DtootaPDTiUHnXPT3W8lI2TLOOp8JZGl contact@matthias-kuklinski.com"
   ];
+  users.users.root.initialPassword = "p";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
