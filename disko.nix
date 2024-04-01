@@ -26,7 +26,7 @@
               name = "root";
               priority = 2;
               type = "8300";
-              size = "100%";
+              size = "50%";
               content = {
                 type = "btrfs";
                 extraArgs = [ "-f" ];
