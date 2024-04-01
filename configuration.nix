@@ -50,6 +50,7 @@
     curl
     git
     vim 
+    zoxide
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
