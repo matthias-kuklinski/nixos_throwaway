@@ -23,10 +23,10 @@
               };
             };
             root = {
-              name = "root";
+              name = "rooooooooooooooooooooot";
               priority = 2;
               type = "8300";
-              size = "50%";
+              size = "100%";
               content = {
                 type = "btrfs";
                 extraArgs = [ "-f" ];
