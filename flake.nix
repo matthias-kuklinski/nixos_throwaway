@@ -5,39 +5,29 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     disko = {
-     url = "github:nix-community/disko";
-     inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # home-manager = {
+    #   url = "github:nix-community/home-manager";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
-  outputs = { nixpkgs, disko, ... }:
+  outputs = {nixpkgs, ...} @ inputs:
   {
-    nixosConfigurations = {
-      thor = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          disko.nixosModules.disko
-          { disko.devices.disk.main.device = "/dev/nvme0n1"; }
-          ./hosts/thor
+    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        inputs.disko.nixosModules.default
+        (import ./disko.nix { device = "/dev/nvme0n1"; })
 
-         # home-manager.nixosModules.home-manager {
-         #   home-manager.useGlobalPkgs = true;
-         #   home-manager.useUserPackages = true;
-         #   home-manager.users.matthias = import ./home-manager/thor.nix;
-         # }
-        ];
-      };
+        ./configuration.nix
+              
+        # inputs.home-manager.nixosModules.default
+        # inputs.impermanence.nixosModules.impermanence
+      ];
     };
-    # homeConfigurations = {
-    #   "matthias@thor" = home-manager.lib.homeManagerConfiguration {
-    #     pkgs = nixpkgs.legacyPackages.x86_64-linux;
-    #     modules = [ ./home/thor.nix ];
-    #   };
-    # };
   };
 }
