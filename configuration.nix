@@ -14,6 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/efi";
+  boot.supportedFilesystems = [ "btrfs" "ntfs" ];
 
   networking.hostName = "thor"; # Define your hostname.
 
