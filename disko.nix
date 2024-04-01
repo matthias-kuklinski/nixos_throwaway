@@ -30,9 +30,11 @@
               content = {
                 type = "btrfs";
                 extraArgs = [ "-f" ];
-                mountOptions = [ "compress=zstd" "noatime" ];
-                mountpoint = "/";
                 subvolumes = {
+                  "/root" = {
+                    mountOptions = [ "compress=zstd" "noatime" ];
+                    mountpoint = "/";
+                  };
                   "/home" = {
                     mountOptions = [ "compress=zstd" "noatime" ];
                     mountpoint = "/home";
