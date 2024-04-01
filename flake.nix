@@ -24,7 +24,12 @@
         (import ./disko.nix { device = "/dev/nvme0n1"; })
 
         ./configuration.nix
-              
+        inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.matthias = import ./home-manager/matthias.nix;
+          }
         # inputs.home-manager.nixosModules.default
         # inputs.impermanence.nixosModules.impermanence
       ];
