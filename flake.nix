@@ -1,8 +1,10 @@
 {
-  description = "Nixos config flake";
+  description = "nixos-config";
      
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
 
     disko = {
       url = "github:nix-community/disko";
@@ -15,23 +17,30 @@
     };
   };
 
-  outputs = {nixpkgs, ...} @ inputs:
+  outputs = {nixpkgs, disko, home-manager, ...}@inputs:
   {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        inputs.disko.nixosModules.default
-        (import ./hosts/thor/disko.nix { device = "/dev/nvme0n1"; })
-        ./hosts/thor
+    nixosConfigurations = {
+      thor = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          # filesystem
+          disko.nixosModules.disko
+          # (import ./hosts/thor/disko.nix { device = "/dev/nvme0n1"; })
+          ./hosts/thor/disko.nix { 
+            _module.args.device = "/dev/nvme0n1"; 
+          }
 
-        inputs.home-manager.nixosModules.home-manager {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.matthias = import ./home-manager/matthias.nix;
-        }
-        # inputs.home-manager.nixosModules.default
-        # inputs.impermanence.nixosModules.impermanence
-      ];
+          # operating system
+          ./hosts/thor
+          
+          # user space
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.matthias = import ./home-manager/matthias.nix;
+          }
+        ];
+      };
     };
   };
 }
