@@ -26,9 +26,9 @@
               name = "root";
               priority = 2;
               type = "8300";
-              # size = "100%";
-              start = "512MiB";
-              end = "100%";
+              size = "100%";
+              # start = "513MiB";
+              # end = "100%";
               content = {
                 type = "btrfs";
                 extraArgs = [ "-f" ];
