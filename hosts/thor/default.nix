@@ -58,6 +58,7 @@
   environment.systemPackages = with pkgs; [
     bat
     curl
+    jq
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
