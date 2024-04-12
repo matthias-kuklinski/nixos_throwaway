@@ -34,6 +34,15 @@
   # Enable sound.
   # sound.enable = true;
   # hardware.pulseaudio.enable = true;
+  systemd = {
+    network = {
+      enable = true;
+      networks."10-lan" = {
+        matchConfig.Name = "eno1";
+        networkConfig.DHCP = "ipv4";
+      };
+    };
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.matthias = {
