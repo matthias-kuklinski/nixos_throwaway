@@ -34,6 +34,7 @@
   # Enable sound.
   # sound.enable = true;
   # hardware.pulseaudio.enable = true;
+  networking.useNetworkd = true;
   systemd = {
     network = {
       enable = true;
