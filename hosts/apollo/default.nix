@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  initialPassword = "password";
+in 
 {
   imports = [ ./hardware-configuration.nix ];
 
@@ -16,7 +19,7 @@
   time.timeZone = "Europe/Berlin";
 
   # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "en_US.UTF-8";
   # console = {
   #   font = "Lat2-Terminus16";
   #   keyMap = "us";
@@ -27,9 +30,14 @@
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
-  # Enable sound.
-  # sound.enable = true;
-  # hardware.pulseaudio.enable = true;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
   networking.useNetworkd = true;
   systemd = {
     network = {
@@ -42,19 +50,28 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.matthias = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [];
-    initialPassword = "p";
+  users.users = {
+    matthias = {
+      inherit initialPassword;
+      isNormalUser = true;
+      extraGroups = [ "wheel" ];
+      shell = pkgs.zsh;
+      ignoreShellProgramCheck = true; # 
+    };
+
+    root = {
+      inherit initialPassword;
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMMmlA8u2fb4DtootaPDTiUHnXPT3W8lI2TLOOp8JZGl contact@matthias-kuklinski.com"
+      ];
+    };
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    bat
     curl
-    jq
+    git
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -81,12 +98,6 @@
     domains = [ "~." ];
     fallbackDns = [ "8.8.8.8" ];
   };
-
-  users.users.root.openssh.authorizedKeys.keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMMmlA8u2fb4DtootaPDTiUHnXPT3W8lI2TLOOp8JZGl contact@matthias-kuklinski.com"
-  ];
-
-  users.users.root.initialPassword = "p";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
