@@ -15,7 +15,7 @@
   };
   boot.supportedFilesystems = [ "btrfs" "ntfs" ];
 
-  networking.hostName = "thor"; # Define your hostname.
+  networking.hostName = "apollo"; # Define your hostname.
 
   time.timeZone = "Europe/Berlin";
 
@@ -58,7 +58,6 @@
   environment.systemPackages = with pkgs; [
     bat
     curl
-    git
     jq
   ];
 
