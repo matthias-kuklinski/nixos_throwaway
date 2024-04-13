@@ -60,6 +60,7 @@
     curl
     git
     jq
+    rg
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
