@@ -9,6 +9,7 @@ in
     path: [ "${modulesDirectory}/${path}.nix" ]
   ) [
     "eza"
+    "firefox"
     "fonts"
     "neovim"
     "starship"
