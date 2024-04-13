@@ -60,7 +60,7 @@
     curl
     git
     jq
-    rg
+    tealdeer
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
