@@ -82,17 +82,6 @@ in
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    settings = {
-      PermitRootLogin = "yes";
-      PasswordAuthentication = false;
-    };
-  };
-
   services.resolved = {
     enable = true;
     domains = [ "~." ];
