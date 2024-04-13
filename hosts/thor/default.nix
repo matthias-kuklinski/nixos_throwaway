@@ -1,40 +1,26 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 { pkgs, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi = {
-    canTouchEfiVariables = true;
-    efiSysMountPoint = "/efi";
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi = {
+        efiSysMountPoint = "/efi";
+        canTouchEfiVariables = true;
+      };
+    };
+    supportedFilesystems = [ "btrfs" "ntfs" ];
   };
-  boot.supportedFilesystems = [ "btrfs" "ntfs" ];
-
-  networking.hostName = "thor"; # Define your hostname.
 
   time.timeZone = "Europe/Berlin";
 
-  # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
+  networking = {
+    hostName = "thor";
+    useNetworkd = true;
+  };
 
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
-  # Enable sound.
-  # sound.enable = true;
-  # hardware.pulseaudio.enable = true;
-  networking.useNetworkd = true;
   systemd = {
     network = {
       enable = true;
@@ -43,6 +29,21 @@
         networkConfig.DHCP = "ipv4";
       };
     };
+  };
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    keyMap = "us";
+    useXkbConfig = true; # use xkb.options in tty.
+  };
+
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.

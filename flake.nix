@@ -41,6 +41,27 @@
           }
         ];
       };
+      apollo = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          # filesystem
+          disko.nixosModules.disko
+          # (import ./hosts/apollo/disko.nix { device = "/dev/nvme0n1"; })
+          ./hosts/apollo/disko.nix { 
+            _module.args.device = "/dev/nvme0n1"; 
+          }
+
+          # operating system
+          ./hosts/apollo
+          
+          # user space
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.matthias = import ./home-manager/matthias.nix;
+          }
+        ];
+      };
     };
   };
 }
