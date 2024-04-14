@@ -16,6 +16,7 @@ in
     "neovim"
     "rg"
     "starship"
+    "ssh"
     "tealdeer"
     "zoxide"
     "zsh"
