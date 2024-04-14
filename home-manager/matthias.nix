@@ -10,9 +10,12 @@ in
   ) [
     "eza"
     "firefox"
+    "foot"
     "fonts"
+    "hyprland"
     "neovim"
     "starship"
+    "tealdeer"
     "zoxide"
     "zsh"
   ];
