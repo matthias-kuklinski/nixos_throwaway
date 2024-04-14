@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       main = {
-        font = "Hack Nerd Font Mono:size=12";
+        font = "Hack Nerd Font Mono:size=13";
         pad = "8x8";
       };
 

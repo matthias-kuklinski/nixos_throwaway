@@ -14,6 +14,7 @@ in
     "fonts"
     "hyprland"
     "neovim"
+    "rg"
     "starship"
     "tealdeer"
     "zoxide"
