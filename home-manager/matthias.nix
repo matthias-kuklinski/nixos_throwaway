@@ -35,7 +35,7 @@ in
 
     sessionVariables = {
       WLR_NO_HARDWARE_CURSORS = "1";
-      SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent;
+      SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent";
     };
 
     packages = with pkgs; [
