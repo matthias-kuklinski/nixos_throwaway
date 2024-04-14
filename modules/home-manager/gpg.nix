@@ -8,6 +8,6 @@
 
   services.gpg-agent = {
     enable = true;
-    pinentryPackage = null;
+    pinentryPackage = default;
   };
 }

@@ -21,6 +21,7 @@ in
     "starship"
     "ssh"
     "tealdeer"
+    "xdg"
     "zoxide"
     "zsh"
   ];
