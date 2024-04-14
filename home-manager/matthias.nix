@@ -8,9 +8,12 @@ in
   imports = lib.concatMap(
     path: [ "${modulesDirectory}/${path}.nix" ]
   ) [
+    "bottom"
     "eza"
     "firefox"
     "foot"
+    "git"
+    "gpg"
     "fonts"
     "hyprland"
     "neovim"
