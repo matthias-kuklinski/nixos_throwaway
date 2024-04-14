@@ -1,6 +1,6 @@
 {
   programs.ssh = {
-    enable = true
+    enable = true;
     addKeysToAgent = "ask";
   };
 }
