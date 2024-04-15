@@ -8,6 +8,7 @@ in
   imports = lib.concatMap(
     path: [ "${modulesDirectory}/${path}.nix" ]
   ) [
+    "aws"
     "bottom"
     "eza"
     "firefox"
