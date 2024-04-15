@@ -20,7 +20,6 @@
       x = "exit";
     };
     envExtra = "export ZDOTDIR=~/.config/zsh";
-    profileExtra = "export SSH_AUTO_SOCK=\"$XDG_RUNTIME_DIR/ssh-agent.socket\"";
     initExtra = ''
       # Settings
       unsetopt beep           # Do not beep on erros.
