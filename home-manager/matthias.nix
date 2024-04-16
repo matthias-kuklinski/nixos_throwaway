@@ -39,7 +39,7 @@ in
         executable = true;
       };
     };
-  }
+  };
 
   programs.home-manager.enable = true;
 
