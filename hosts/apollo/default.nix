@@ -54,7 +54,7 @@ in
     matthias = {
       inherit initialPassword;
       isNormalUser = true;
-      extraGroups = [ "wheel" ];
+      extraGroups = [ "docker" "wheel" ];
       shell = pkgs.zsh;
       ignoreShellProgramCheck = true; # 
     };
@@ -91,6 +91,11 @@ in
     enable = true;
     domains = [ "~." ];
     fallbackDns = [ "8.8.8.8" ];
+  };
+
+  virtualisation.docker = {
+    enable = true;
+    storageDriver = "btrfs";
   };
 
   # Open ports in the firewall.
