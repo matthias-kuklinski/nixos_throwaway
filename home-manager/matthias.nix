@@ -42,6 +42,7 @@ in
     packages = with pkgs; [
       keepassxc
       pinentry
+      terraform
       qpdf
     ];
 
