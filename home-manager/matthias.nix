@@ -17,6 +17,7 @@ in
     "gpg"
     "fonts"
     "hyprland"
+    "mpv"
     "neovim"
     "obs-studio"
     "rg"
