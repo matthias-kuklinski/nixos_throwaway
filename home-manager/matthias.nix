@@ -18,6 +18,7 @@ in
     "fonts"
     "hyprland"
     "neovim"
+    "obs-studio"
     "rg"
     "starship"
     "ssh"
