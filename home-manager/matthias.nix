@@ -46,8 +46,7 @@ in
       pinentry
       terraform
       qpdf
-      wf-copy
-      wf-paste
+      wl-clipboard
       wf-recorder
     ];
 
