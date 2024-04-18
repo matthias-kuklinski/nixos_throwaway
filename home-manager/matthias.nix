@@ -45,6 +45,7 @@ in
       pinentry
       terraform
       qpdf
+      wf-recorder
     ];
 
     sessionPath = [ "$HOME/.local/bin" ];
