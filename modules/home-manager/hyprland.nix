@@ -9,6 +9,7 @@
       monitor = DP-3,2560x1440@144,0x0,1
       monitor = DP-1,2560x1440@144,2560x0,1
       monitor = DP-2,2560x1440@144,5120x0,1
+      monitor = HDMI-A-1,4096x2160@60,7680x0,1
 
       input {
         kb_layout = us
