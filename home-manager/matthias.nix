@@ -52,7 +52,7 @@ in
 
     services = {
       ssh-agent.enable = true;
-    }
+    };
 
     sessionPath = [ "$HOME/.local/bin" ];
     file = {
