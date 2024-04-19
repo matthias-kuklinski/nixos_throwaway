@@ -31,6 +31,10 @@ in
 
   programs.home-manager.enable = true;
 
+  services = {
+    ssh-agent.enable = true;
+  };
+
   home = { 
     username = username;
     homeDirectory = "/home/${username}";
@@ -49,10 +53,6 @@ in
       wl-clipboard
       wf-recorder
     ];
-
-    services = {
-      ssh-agent.enable = true;
-    };
 
     sessionPath = [ "$HOME/.local/bin" ];
     file = {
