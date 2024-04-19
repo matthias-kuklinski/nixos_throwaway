@@ -22,7 +22,6 @@ in
     "obs-studio"
     "rg"
     "starship"
-    # "ssh"
     "tealdeer"
     "xdg"
     "zoxide"
