@@ -19,7 +19,7 @@ in
     "hyprland"
     "mpv"
     "neovim"
-    "obs-studio"
+    # "obs-studio"
     "rg"
     "starship"
     "tealdeer"
