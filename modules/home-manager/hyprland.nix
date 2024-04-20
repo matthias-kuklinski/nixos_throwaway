@@ -74,6 +74,7 @@
 
       bind = $mainMod, q, killactive,
       bind = $mainMod, f, togglefloating,
+      bind = $mainMod, F, fullscreen,
       bind = $mainMod, O, togglesplit,
 
       bind = $mainMod, h, movefocus, l
