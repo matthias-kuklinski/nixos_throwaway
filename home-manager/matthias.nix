@@ -45,6 +45,7 @@ in
     };
 
     packages = with pkgs; [
+      go
       keepassxc
       pinentry
       terraform
