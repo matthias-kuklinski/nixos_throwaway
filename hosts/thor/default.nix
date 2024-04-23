@@ -1,26 +1,46 @@
 { pkgs, ... }:
 
+let
+  initialPassword = "password";
+in 
 {
   imports = [ ./hardware-configuration.nix ];
 
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi = {
-        efiSysMountPoint = "/efi";
-        canTouchEfiVariables = true;
-      };
-    };
-    supportedFilesystems = [ "btrfs" "ntfs" ];
+  nixpkgs.config.allowUnfree = true;
+
+  # Use the systemd-boot EFI boot loader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi = {
+    canTouchEfiVariables = true;
+    efiSysMountPoint = "/efi";
   };
+  boot.supportedFilesystems = [ "btrfs" "ntfs" ];
+
+  networking.hostName = "thor";
 
   time.timeZone = "Europe/Berlin";
 
-  networking = {
-    hostName = "thor";
-    useNetworkd = true;
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
+  # console = {
+  #   font = "Lat2-Terminus16";
+  #   keyMap = "us";
+  #   useXkbConfig = true; # use xkb.options in tty.
+  # };
+
+  # Configure keymap in X11
+  # services.xserver.xkb.layout = "us";
+  # services.xserver.xkb.options = "eurosign:e,caps:escape";
+
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
   };
 
+  networking.useNetworkd = true;
   systemd = {
     network = {
       enable = true;
@@ -31,37 +51,34 @@
     };
   };
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    keyMap = "us";
-    useXkbConfig = true; # use xkb.options in tty.
-  };
-
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.matthias = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [];
-    initialPassword = "p";
+  users.users = {
+    matthias = {
+      inherit initialPassword;
+      isNormalUser = true;
+      extraGroups = [ "docker" "wheel" ];
+      shell = pkgs.zsh;
+      ignoreShellProgramCheck = true; # 
+    };
+
+    root = {
+      inherit initialPassword;
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMMmlA8u2fb4DtootaPDTiUHnXPT3W8lI2TLOOp8JZGl contact@matthias-kuklinski.com"
+      ];
+    };
+  };
+
+  programs.hyprland = { 
+    enable = true;
+    # xwayland.enable = false;
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    bat
     curl
     git
-    jq
-    tealdeer
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -72,28 +89,16 @@
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    settings = {
-      PermitRootLogin = "yes";
-      PasswordAuthentication = false;
-    };
-  };
-
   services.resolved = {
     enable = true;
     domains = [ "~." ];
     fallbackDns = [ "8.8.8.8" ];
   };
 
-  users.users.root.openssh.authorizedKeys.keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMMmlA8u2fb4DtootaPDTiUHnXPT3W8lI2TLOOp8JZGl contact@matthias-kuklinski.com"
-  ];
-
-  users.users.root.initialPassword = "p";
+  virtualisation.docker = {
+    enable = true;
+    storageDriver = "btrfs";
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
