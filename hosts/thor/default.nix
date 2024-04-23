@@ -98,6 +98,7 @@ in
   virtualisation.docker = {
     enable = true;
     storageDriver = "btrfs";
+    setSocketVariable = true;
   };
 
   # Open ports in the firewall.
