@@ -46,6 +46,7 @@ in
     };
 
     packages = with pkgs; [
+      act
       go
       keepassxc
       nodejs_21
