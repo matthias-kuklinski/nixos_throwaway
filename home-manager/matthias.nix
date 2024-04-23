@@ -48,11 +48,13 @@ in
     packages = with pkgs; [
       go
       keepassxc
+      nodejs_21
       pinentry
       terraform
       qpdf
       wl-clipboard
       wf-recorder
+      unzip
     ];
 
     sessionPath = [ "$HOME/.local/bin" ];
