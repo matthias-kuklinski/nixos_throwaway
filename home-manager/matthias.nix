@@ -52,6 +52,7 @@ in
       go
       keepassxc
       nodejs_21
+      ollama
       pinentry
       terraform
       tfswitch
