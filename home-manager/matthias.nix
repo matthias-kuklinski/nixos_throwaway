@@ -10,6 +10,7 @@ in
   ) [
     "aws"
     "bottom"
+    "direnv"
     "eza"
     "firefox"
     "foot"
@@ -47,11 +48,13 @@ in
 
     packages = with pkgs; [
       act
+      azure-cli
       go
       keepassxc
       nodejs_21
       pinentry
       terraform
+      tfswitch
       qpdf
       wl-clipboard
       wf-recorder
