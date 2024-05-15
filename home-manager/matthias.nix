@@ -50,10 +50,12 @@ in
       act
       azure-cli
       go
+      grim
       keepassxc
       nodejs_21
       ollama
       pinentry
+      slurp
       terraform
       tfswitch
       qpdf
