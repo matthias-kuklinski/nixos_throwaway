@@ -7,7 +7,7 @@
       exec = swww clear 000000
 
       monitor = DP-3,2560x1440@144,0x0,1
-      monitor = DP-1,2560x1440@144,2560x0,1
+      monitor = DP-1,2560x1440@144,2560x0,1.25
       monitor = DP-2,2560x1440@144,5120x0,1
       monitor = HDMI-A-1,3840x2160,7680x0,1
 
@@ -71,6 +71,7 @@
       bind = $mainMod, n, exec, foot
       bind = $mainMod, p, exec, keepassxc
       bind = $mainMod, s, exec, grim -g "$(slurp)" - | wl-copy -t image/png
+      bind = $mainMod, m, exec, fuzzel
 
       bind = $mainMod, q, killactive,
       bind = $mainMod, f, togglefloating,

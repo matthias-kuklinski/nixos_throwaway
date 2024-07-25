@@ -8,6 +8,9 @@
 
   services.gpg-agent = {
     enable = true;
-    pinentryPackage = pkgs.pinentry;
+    pinentryPackage = pkgs.pinentry-tty;
+    # https://superuser.com/a/624488
+    defaultCacheTtl = 86400;
+    maxCacheTtl = 86400;
   };
 }

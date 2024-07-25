@@ -13,7 +13,9 @@ in
     "direnv"
     "eza"
     "firefox"
+    "fuzzel"
     "foot"
+    "gh"
     "git"
     "gpg"
     "fonts"
@@ -52,8 +54,10 @@ in
       go
       grim
       keepassxc
+      logseq
       nodejs_21
       ollama
+      obsidian
       pinentry
       slurp
       terraform
