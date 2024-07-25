@@ -7,8 +7,8 @@
       exec = swww clear 000000
 
       monitor = DP-3,2560x1440@144,0x0,1
-      monitor = DP-1,2560x1440@144,2560x0,1.25
-      monitor = DP-2,2560x1440@144,5120x0,1
+      monitor = DP-1,2560x1440@144,2560x0,1.75
+      monitor = DP-2,2560x1440@144,5120x0,1.75
       monitor = HDMI-A-1,3840x2160,7680x0,1
 
       input {
