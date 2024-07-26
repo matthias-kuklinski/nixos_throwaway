@@ -4,9 +4,9 @@
     settings = {
       "add_newline" = false;
       "aws" = {
-        "symbol" = "☁️  "
+        "symbol" = "☁️  ";
         "disabled" = false;
-      }
+      };
       "azure" = {
         "symbol" = "󰠅 "
         "disabled" = false;
