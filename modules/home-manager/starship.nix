@@ -3,6 +3,9 @@
     enable = true;
     settings = {
       "add_newline" = false;
+      "azure" = {
+        "disabled" = false;
+      };
       "directory"= {
         "read_only"= " ";
         "style"= "bold blue";
