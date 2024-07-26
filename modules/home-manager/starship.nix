@@ -3,7 +3,12 @@
     enable = true;
     settings = {
       "add_newline" = false;
+      "aws" = {
+        "symbol" = "☁️  "
+        "disabled" = false;
+      }
       "azure" = {
+        "symbol" = "󰠅 "
         "disabled" = false;
       };
       "directory"= {
