@@ -8,7 +8,7 @@
         "disabled" = false;
       };
       "azure" = {
-        "symbol" = "󰠅 "
+        "symbol" = "󰠅 ";
         "disabled" = false;
       };
       "directory"= {
