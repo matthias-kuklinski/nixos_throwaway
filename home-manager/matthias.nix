@@ -55,6 +55,7 @@ in
       grim
       keepassxc
       logseq
+      mpvpaper
       nodejs_21
       ollama
       obsidian
