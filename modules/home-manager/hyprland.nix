@@ -21,8 +21,8 @@
 
       general {
         gaps_in = 5
-        gaps_out = 20
-        border_size = 2
+        gaps_out = 5
+        border_size = 1
         col.active_border = rgba(1affffee)
         col.inactive_border = rgba(595959aa)
 
@@ -51,6 +51,7 @@
       dwindle {
         pseudotile = yes
         preserve_split = yes
+        no_gaps_when_only = yes
       }
 
       master {
