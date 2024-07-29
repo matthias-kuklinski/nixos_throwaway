@@ -4,8 +4,9 @@
     settings = {
       "add_newline" = false;
       "aws" = {
-        "disabled" = true;
-        "symbol" = "☁️  ";
+        "format" = "on [$symbol($profile )(\($region\) )]($style)";
+        "disabled" = false;
+        "symbol" = "☁️ ";
       };
       "azure" = {
         "symbol" = "󰠅 ";

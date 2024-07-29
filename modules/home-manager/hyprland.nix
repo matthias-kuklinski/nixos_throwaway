@@ -3,8 +3,7 @@
     enable = true;
     extraConfig = ''
       exec-once = fnott
-      exec-once = swww init
-      exec = swww clear 000000
+      exec-once = mpvpaper '*' --mpv-options 'no-audio --loop' videos/wallpaper/ring.mp4
 
       monitor = DP-3,2560x1440@144,0x0,1
       monitor = DP-1,2560x1440@144,2560x0,1
