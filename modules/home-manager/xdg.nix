@@ -4,8 +4,9 @@ let
 in 
 {
   home.packages = with pkgs; [
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-hyprland
+    # additional xdg-desktop-portal's are not needed and in fact won't allow smooth screen sharing
+    xdg-desktop-portal-gtk      # required for file picker etc.
+    xdg-desktop-portal-hyprland # https://wiki.hyprland.org/Useful-Utilities/xdg-desktop-portal-hyprland/
   ];
 
   xdg = {
