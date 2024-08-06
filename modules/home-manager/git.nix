@@ -23,7 +23,7 @@
       }
       {
         path = "/home/matthias/.gitconfig-work-glueckkanja";
-        condition = "gitdir:home/matthias/engineering/work/glueckkanja";
+        condition = "gitdir:home/matthias/engineering/work/glueckkanja/";
       }
     ];
   };
