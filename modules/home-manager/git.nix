@@ -26,6 +26,5 @@
         condition = "gitdir:home/matthias/engineering/work/glueckkanja";
       }
     ]
-    };
   };
 }
