@@ -19,11 +19,11 @@
     includes = [
       {
         path = "/home/matthias/.gitconfig-personal";
-        condition = "gitdir:home/matthias/engineering/";
+        condition = "gitdir:/home/matthias/engineering/";
       }
       {
         path = "/home/matthias/.gitconfig-work-glueckkanja";
-        condition = "gitdir:home/matthias/engineering/work/glueckkanja/";
+        condition = "gitdir:/home/matthias/engineering/work/glueckkanja/";
       }
     ];
   };
