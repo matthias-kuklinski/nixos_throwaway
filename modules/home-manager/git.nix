@@ -13,7 +13,20 @@
       signByDefault = true;
     };
 
-    userEmail = "contact@matthias-kuklinski.com";
+    # userEmail = "contact@matthias-kuklinski.com";
     userName = "Matthias Kuklinski";
+
+    includes = {
+      [
+        {
+          path = "/home/matthias/.gitconfig-personal";
+          condition = "gitdir:home/matthias/engineering/";
+        }
+        {
+          path = "/home/matthias/.gitconfig-work-glueckkanja";
+          condition = "gitdir:home/matthias/engineering/work/glueckkanja";
+        }
+      ]
+    };
   };
 }
