@@ -56,6 +56,7 @@ in
       imagemagick
       keepassxc
       logseq
+      lua
       luajitPackages.magick
       mpvpaper
       nodejs_21
