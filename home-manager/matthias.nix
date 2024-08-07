@@ -53,6 +53,7 @@ in
       azure-cli
       go
       grim
+      imagemagick
       keepassxc
       logseq
       mpvpaper
