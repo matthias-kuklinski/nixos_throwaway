@@ -64,6 +64,7 @@ in
       slurp
       terraform
       tfswitch
+      ueberzugpp
       qpdf
       wl-clipboard
       wf-recorder
