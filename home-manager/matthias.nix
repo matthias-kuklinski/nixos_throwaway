@@ -56,6 +56,7 @@ in
       imagemagick
       keepassxc
       logseq
+      luajitPackages.magick
       mpvpaper
       nodejs_21
       ollama
