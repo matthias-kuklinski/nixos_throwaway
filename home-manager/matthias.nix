@@ -57,7 +57,6 @@ in
       keepassxc
       logseq
       lua
-      luajitPackages.magick
       mpvpaper
       nodejs_21
       ollama
