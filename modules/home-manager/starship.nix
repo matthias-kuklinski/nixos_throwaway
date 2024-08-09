@@ -23,7 +23,7 @@
         ];
       };
       add_newline = false;
-      aws = {
+      azure = {
         disabled = false;
         symbol = "☁️ ";
         format = pkgs.lib.concatStrings [
@@ -36,7 +36,7 @@
           "($style) "
         ];
       };
-      azure = {
+      aws = {
         disabled = false;
         symbol = "☁️ ";
         expiration_symbol = "X";
