@@ -7,6 +7,8 @@ in
   imports = [ ./hardware-configuration.nix ];
 
   nixpkgs.config.allowUnfree = true;
+  # equivalent to "nix --extra-experimental-features 'nix-command flakes'"
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
