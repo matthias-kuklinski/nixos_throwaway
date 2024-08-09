@@ -11,9 +11,9 @@
         pure_msg = "pure";
         impure_msg = "impure";
         unknown_msg = "unknown";
-        style = "bold blue";
+        style = "blue bold";
         format = pkgs.lib.concatStrings [
-          "via "
+          "| "
           "["
           "$symbol"
           "$name"
@@ -28,9 +28,19 @@
         "disabled" = false;
         "symbol" = "☁️ ";
       };
-      "azure" = {
-        "symbol" = "󰠅 ";
-        "disabled" = false;
+      azure = {
+        disabled = false;
+        symbol = "󰠅";
+        style = "blue bold";
+        format = pkgs.lib.concatStrings [
+          "| "
+          "["
+          "$symbol"
+          "$subscription"
+          "\\($username\\)"
+          "]"
+          "($style) "
+        ];
       };
       "directory"= {
         "read_only"= " ";
