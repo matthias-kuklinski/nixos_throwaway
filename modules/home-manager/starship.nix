@@ -52,14 +52,15 @@
           "($style) "
         ];
       };
-      "directory"= {
-        "read_only"= " ";
-        "style"= "bold blue";
-        "truncate_to_repo"= false;
+      directory = {
+        read_only = "🔒";
+        style = "cyan bold";
+        truncate_to_repo = true;
+        truncation_length = 2;
       };
-      "git_branch"= {
-        "style"= "bold blue";
-        "symbol"= " ";
+      git_branch = {
+        style = "blue bold";
+        symbol = "🌱";
       };
       git_status = {
         ahead = "⇡\${count}";
@@ -68,7 +69,7 @@
         diverged = "⇡\${ahead_count}⇣\${behind_count}";
         modified = "!\${count}";
         staged = "+\${count}";
-        style = "bold red";
+        style = "green bold";
         untracked = "?\${count}";
       };
       "cmd_duration" = {
