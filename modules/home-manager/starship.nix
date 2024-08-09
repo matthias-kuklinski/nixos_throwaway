@@ -89,14 +89,46 @@
           "($style) "
         ];
       };
-      "cmd_duration" = {
-        "min_time" = 5000;
+      cmd_duration = {
+        min_time = 2000;
+        show_milliseconds = true;
+        style = "white bold";
+        show_notifications = true;
+        min_time_to_notify = 5;
+        format = pkgs.lib.concatStrings [
+          "took"
+          "["
+          "$duration"
+          "]"
+          "$(style) "
+        ];
       };
-      "username" = {
-        "format" = "[$user](bold blue) on ";
+      hostname = {
+        disabled = false;
+        ssh_symbol = "🔑";
+        ssh_only = true;
+        style = "red bold";
+	      format = pkgs.lib.concatStrings [
+          "| "
+          "["
+          "$ssh_symbol "
+          "$hostname"
+          "]"
+          "($style) "
+        ];
       };
-      "hostname" = {
-	      "format" = "[$hostname](bold blue) in ";
+      username = {
+        disabled = false;
+        show_always = false;
+        style_root = "red bold";
+        style_user = "blue bold";
+	      format = pkgs.lib.concatStrings [
+          "| "
+          "["
+          "$user "
+          "]"
+          "($style) "
+        ];
       };
     };
   };
