@@ -56,12 +56,12 @@
         read_only = "🔒";
         style = "blue bold";
         truncate_to_repo = true;
-        truncation_length = 1;
+        truncation_length = 4;
       };
       git_branch = {
         disabled = false;
         symbol = "🌱";
-        style = "blue bold";
+        style = "green bold";
         format = pkgs.lib.concatStrings [
           "| "
           "["
@@ -78,8 +78,8 @@
         diverged = "⇡\${ahead_count}⇣\${behind_count}";
         modified = "!\${count}";
         staged = "+\${count}";
-        style = "green bold";
         untracked = "?\${count}";
+        style = "green bold";
       };
       "cmd_duration" = {
         "min_time" = 5000;
