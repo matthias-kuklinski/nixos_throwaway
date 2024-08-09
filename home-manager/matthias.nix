@@ -51,6 +51,7 @@ in
     packages = with pkgs; [
       act
       azure-cli
+      cargo
       go
       grim
       imagemagick
