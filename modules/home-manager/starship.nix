@@ -54,13 +54,23 @@
       };
       directory = {
         read_only = "🔒";
-        style = "cyan bold";
+        style = "blue bold";
         truncate_to_repo = true;
-        truncation_length = 2;
+        truncation_length = 1;
       };
       git_branch = {
-        style = "blue bold";
+        disabled = false;
         symbol = "🌱";
+        style = "blue bold";
+        format = pkgs.lib.concatStrings [
+          "| "
+          "["
+          "$symbol"
+          "$branch"
+          "\\(:$remote_branch\\)"
+          "]"
+          "($style) "
+        ];
       };
       git_status = {
         ahead = "⇡\${count}";
