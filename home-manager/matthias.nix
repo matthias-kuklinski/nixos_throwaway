@@ -59,7 +59,7 @@ in
       logseq
       lua
       mpvpaper
-      nodejs_21
+      nodejs_22
       ollama
       obsidian
       pinentry
