@@ -27,6 +27,7 @@
         disabled = false;
         symbol = "☁️ ";
         format = pkgs.lib.concatStrings [
+          "| "
           "["
           "$symbol"
           "$subscription"
