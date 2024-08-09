@@ -17,9 +17,9 @@
           "["
           "$symbol"
           "$name"
-          "($state)"
+          "$state"
           "]"
-          "($style)"
+          "($style) "
         ];
       };
       add_newline = false;
