@@ -4,11 +4,6 @@
   programs.starship = {
     enable = true;
     settings = {
-      format = pkgs.lib.concatStrings [
-        "$username"
-        "$hostname"
-        "$directory"
-      ];
       add_newline = false;
       nix_shell = {
         disabled = false;
