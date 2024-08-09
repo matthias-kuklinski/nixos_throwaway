@@ -61,7 +61,7 @@ in
       mpvpaper
       nodejs_22
       ollama
-      # obsidian
+      obsidian
       pinentry
       slurp
       terraform
