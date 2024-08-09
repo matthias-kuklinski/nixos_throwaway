@@ -100,7 +100,7 @@
           "["
           "$duration"
           "]"
-          "$(style) "
+          "($style) "
         ];
       };
       hostname = {
