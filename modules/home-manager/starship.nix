@@ -5,13 +5,19 @@
     enable = true;
     settings = {
       nix_shell = {
-        style = "bold red";
+        disabled = false;
+        heuristic = false;
+        symbol = "❄️ ";
+        pure_msg = "pure";
+        impure_msg = "impure";
+        unknown_msg = "unknown";
+        style = "bold blue";
         format = pkgs.lib.concatStrings [
           "via "
           "["
           "$symbol"
-          "$state"
-          "($name)"
+          "$name"
+          "($state)"
           "]"
           "($style)"
         ];
