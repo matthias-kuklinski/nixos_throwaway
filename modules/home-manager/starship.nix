@@ -1,11 +1,17 @@
+{ pkgs, ... }:
+
 {
   programs.starship = {
     enable = true;
     settings = {
-      "nix_shell" = {
-        "format" = "via [$symbol$state( \($name\))]($style)";
+      nix_shell = {
+        format = pkgs.lib.concatStrings [
+          "via "
+          "$symbol"
+          "$state"
+        ];
       };
-      "add_newline" = false;
+      add_newline = false;
       "aws" = {
         "format" = "on [$symbol($profile )(\($region\) )]($style)";
         "disabled" = false;
