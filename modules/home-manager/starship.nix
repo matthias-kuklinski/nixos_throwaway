@@ -5,10 +5,15 @@
     enable = true;
     settings = {
       nix_shell = {
+        style = "bold red";
         format = pkgs.lib.concatStrings [
           "via "
+          "["
           "$symbol"
           "$state"
+          "($name)"
+          "]"
+          "($style)"
         ];
       };
       add_newline = false;
