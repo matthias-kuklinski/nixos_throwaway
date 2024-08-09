@@ -56,7 +56,8 @@
         read_only = "🔒";
         style = "blue bold";
         truncate_to_repo = true;
-        truncation_length = 4;
+        truncation_length = 3;
+        truncation_symbol = ".../";
       };
       git_branch = {
         disabled = false;
