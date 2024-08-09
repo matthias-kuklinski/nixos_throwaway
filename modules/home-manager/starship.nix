@@ -17,7 +17,7 @@
           "| "
           "["
           "$symbol"
-          "$name"
+          "$name "
           "\\($state\\)"
           "]"
           "($style) "
@@ -30,7 +30,7 @@
           "| "
           "["
           "$symbol"
-          "$subscription"
+          "$subscription "
           "\\($username\\)"
           "]"
           "($style) "
@@ -46,7 +46,7 @@
           "| "
           "["
           "$symbol"
-          "$profile"
+          "$profile "
           "\\($region\\)"
           "]"
           "($style) "
@@ -81,6 +81,13 @@
         staged = "+\${count}";
         untracked = "?\${count}";
         style = "green bold";
+        format = pkgs.lib.concatStrings [
+          "["
+          "$all_status"
+          "$ahead_behind"
+          "]"
+          "($style) "
+        ];
       };
       "cmd_duration" = {
         "min_time" = 5000;
