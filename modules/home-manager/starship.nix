@@ -65,9 +65,8 @@
         format = pkgs.lib.concatStrings [
           "| "
           "["
-          "$symbol"
+          "$symbol "
           "$branch"
-          "\\(:$remote_branch\\)"
           "]"
           "($style) "
         ];
