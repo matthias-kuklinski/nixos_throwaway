@@ -17,7 +17,7 @@
           "["
           "$symbol"
           "$name"
-          "\($state\)"
+          "\\($state\\)"
           "]"
           "($style) "
         ];
