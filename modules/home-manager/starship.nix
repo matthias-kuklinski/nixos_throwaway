@@ -6,11 +6,11 @@
     settings = {
       nix_shell = {
         disabled = false;
-        heuristic = false;
         symbol = "❄️ ";
         pure_msg = "pure";
         impure_msg = "impure";
         unknown_msg = "unknown";
+        heuristic = false;
         style = "blue bold";
         format = pkgs.lib.concatStrings [
           "| "
@@ -23,21 +23,31 @@
         ];
       };
       add_newline = false;
-      "aws" = {
-        "format" = "on [$symbol($profile )(\($region\) )]($style)";
-        "disabled" = false;
-        "symbol" = "☁️ ";
-      };
-      azure = {
+      aws = {
         disabled = false;
         symbol = "☁️ ";
-        style = "blue bold";
         format = pkgs.lib.concatStrings [
           "| "
           "["
           "$symbol"
           "$subscription"
           "\\($username\\)"
+          "]"
+          "($style) "
+        ];
+      };
+      azure = {
+        disabled = false;
+        symbol = "☁️ ";
+        expiration_symbol = "X";
+        force_display = true;
+        style = "orange bold";
+        format = pkgs.lib.concatStrings [
+          "| "
+          "["
+          "$symbol"
+          "$profile"
+          "\\($region\\)"
           "]"
           "($style) "
         ];
