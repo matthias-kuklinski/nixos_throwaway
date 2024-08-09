@@ -56,7 +56,6 @@ in
       grim
       imagemagick
       keepassxc
-      logseq
       lua
       mpvpaper
       nodejs_22
