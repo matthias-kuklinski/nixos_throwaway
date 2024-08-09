@@ -5,9 +5,9 @@
     enable = true;
     settings = {
       format = pkgs.lib.concatStrings [
-        "$username\\"
-        "$hostname\\"
-        "$directory\\"
+        "$username"
+        "$hostname"
+        "$directory"
       ];
       add_newline = false;
       nix_shell = {
