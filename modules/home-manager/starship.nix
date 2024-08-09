@@ -30,7 +30,7 @@
       };
       azure = {
         disabled = false;
-        symbol = "󰠅";
+        symbol = "☁️ ";
         style = "blue bold";
         format = pkgs.lib.concatStrings [
           "| "
