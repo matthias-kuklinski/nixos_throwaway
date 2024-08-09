@@ -53,11 +53,11 @@
         ];
       };
       directory = {
+        disabled = false;
+        symbol = "🏠";
         read_only = "🔒";
         style = "blue bold";
-        truncate_to_repo = true;
-        truncation_length = 3;
-        truncation_symbol = ".../";
+        truncate_to_repo = false;
       };
       git_branch = {
         disabled = false;
