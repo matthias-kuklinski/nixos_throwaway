@@ -2,6 +2,9 @@
   programs.starship = {
     enable = true;
     settings = {
+      "nix_shell" = {
+        "format" = "via [$symbol$state( \($name\))]($style)";
+      };
       "add_newline" = false;
       "aws" = {
         "format" = "on [$symbol($profile )(\($region\) )]($style)";
