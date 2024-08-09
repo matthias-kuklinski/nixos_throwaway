@@ -4,6 +4,7 @@
   programs.starship = {
     enable = true;
     settings = {
+      add_newline = false;
       nix_shell = {
         disabled = false;
         symbol = "❄️ ";
@@ -22,7 +23,6 @@
           "($style) "
         ];
       };
-      add_newline = false;
       azure = {
         disabled = false;
         symbol = "☁️ ";
@@ -61,15 +61,15 @@
         "style"= "bold blue";
         "symbol"= " ";
       };
-      "git_status"= {
-        "ahead"= "⇡\${count}";
-        "behind"= "⇣\${count}";
-        "deleted"= "-\${count}";
-        "diverged"= "⇡\${ahead_count}⇣\${behind_count}";
-        "modified"= "!\${count}";
-        "staged"= "+\${count}";
-        "style"= "bold red";
-        "untracked"= "?\${count}";
+      git_status = {
+        ahead = "⇡\${count}";
+        behind = "⇣\${count}";
+        deleted = "-\${count}";
+        diverged = "⇡\${ahead_count}⇣\${behind_count}";
+        modified = "!\${count}";
+        staged = "+\${count}";
+        style = "bold red";
+        untracked = "?\${count}";
       };
       "cmd_duration" = {
         "min_time" = 5000;
