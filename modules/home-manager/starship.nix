@@ -54,9 +54,9 @@
       };
       directory = {
         disabled = false;
-        symbol = "🏠";
+        home_symbol = "🏠";
         read_only = "🔒";
-        style = "blue bold";
+        style = "white bold";
         truncate_to_repo = false;
       };
       git_branch = {
