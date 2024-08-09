@@ -41,7 +41,7 @@
         symbol = "☁️ ";
         expiration_symbol = "X";
         force_display = true;
-        style = "yellow bold";
+        style = "blue bold";
         format = pkgs.lib.concatStrings [
           "| "
           "["
