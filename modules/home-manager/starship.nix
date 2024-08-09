@@ -54,7 +54,7 @@
       };
       directory = {
         disabled = false;
-        home_symbol = "🏠";
+        home_symbol = "~";
         read_only = "🔒";
         style = "white bold";
         truncate_to_repo = false;
@@ -62,7 +62,7 @@
       git_branch = {
         disabled = false;
         symbol = "🌱";
-        style = "green bold";
+        style = "blue bold";
         format = pkgs.lib.concatStrings [
           "| "
           "["
