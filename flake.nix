@@ -6,6 +6,10 @@
       url = "github:nixos/nixpkgs/nixos-unstable";
     };
 
+    testpkgs = {
+      url = "github:nixos/nixpkgs/nixos-23.11";
+    };
+
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
