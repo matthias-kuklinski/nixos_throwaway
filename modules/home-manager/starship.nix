@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       add_newline = false;
-      shllvl = {
+      shlvl = {
         disabled = false;
         threshold = 2;
         repeat = false;
