@@ -14,7 +14,7 @@
         format = pkgs.lib.concatStrings [
           "| "
           "["
-          "$symbol"
+          "$symbol "
           "$shlvl "
           "]"
           "($style) "
