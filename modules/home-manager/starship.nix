@@ -5,6 +5,21 @@
     enable = true;
     settings = {
       add_newline = false;
+      shllvl = {
+        disabled = false;
+        threshold = 2;
+        repeat = false;
+        symbol = "🚀";
+        style = "blue bold";
+        format = pkgs.lib.concatStrings [
+          "| "
+          "["
+          "$symbol"
+          "$shlvl "
+          "]"
+          "($style) "
+        ];
+      };
       nix_shell = {
         disabled = false;
         symbol = "❄️ ";
