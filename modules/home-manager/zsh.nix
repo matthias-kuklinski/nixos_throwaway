@@ -1,6 +1,10 @@
 {
   programs.zsh = {
     enable = true;
+    syntaxHighlighting = {
+      enable = true;
+    };
+    autocd = true;
     dotDir = ".config/zsh";
     autosuggestion.enable = true;
     enableCompletion = true;
@@ -20,10 +24,14 @@
       x = "exit";
     };
     envExtra = "export ZDOTDIR=~/.config/zsh";
+    history = {
+      save = 100000;
+      size = 100000;
+      share = true;
+    };
     initExtra = ''
       # Settings
       unsetopt beep           # Do not beep on erros.
-      setopt incappendhistory # Share history across multiple shells.
 
       # Key-Bindings
       bindkey -v '^?' backward-delete-char # Enable vi-mode and fix backspace-bug after leaving insert mode.
