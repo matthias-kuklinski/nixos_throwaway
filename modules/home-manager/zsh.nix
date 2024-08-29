@@ -32,6 +32,7 @@
     initExtra = ''
       # Settings
       unsetopt beep           # Do not beep on erros.
+      setopt incappendhistory # Share history across multiple shells.
 
       # Key-Bindings
       bindkey -v '^?' backward-delete-char # Enable vi-mode and fix backspace-bug after leaving insert mode.
