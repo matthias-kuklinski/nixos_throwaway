@@ -12,28 +12,28 @@ in
   xdg = {
     enable = true;
 
-    cacheHome = "${homeDirectory}/.cache";
-    configHome = "${homeDirectory}/.config";
-    dataHome = "${homeDirectory}/.local/share";
-    stateHome = "${homeDirectory}/.local/state";
+    cacheHome = "${config.home.homeDirectory}/.cache";
+    configHome = "${config.home.homeDirectory}/.config";
+    dataHome = "${config.home.homeDirectory}/.local/share";
+    stateHome = "${config.home.homeDirectory}/.local/state";
     
     userDirs = {
       enable = true;
 
       createDirectories = true;
-      desktop = "${homeDirectory}/desktop";
-      documents = "${homeDirectory}/documents";
-      download = "${homeDirectory}/downloads";
+      desktop = "${config.home.homeDirectory}/desktop";
+      documents = "${config.home.homeDirectory}/documents";
+      download = "${config.home.homeDirectory}/downloads";
       extraConfig = {
-        XDG_ENGINEERING_DIR = "${homeDirectory}/engineering"; # manage software engineering projects
-        XDG_VAULT_DIR = "${homeDirectory}/vault";             # manage secrets
-        XDG_NOTES_DIR = "${homeDirectory}/notes";             # manage notes
+        XDG_ENGINEERING_DIR = "${config.home.homeDirectory}/engineering";
+        XDG_VAULT_DIR = "${config.home.homeDirectory}/vault";
+        XDG_NOTES_DIR = "${config.home.homeDirectory}/notes";
       };
-      music = "${homeDirectory}/music";
-      pictures = "${homeDirectory}/pictures";
-      publicShare = "${homeDirectory}/public";
-      templates = "${homeDirectory}/templates";
-      videos = "${homeDirectory}/videos";
+      music = "${config.home.homeDirectory}/music";
+      pictures = "${config.home.homeDirectory}/pictures";
+      publicShare = "${config.home.homeDirectory}/public";
+      templates = "${config.home.homeDirectory}/templates";
+      videos = "${config.home.homeDirectory}/videos";
     };
 
     mime.enable = true;
@@ -41,8 +41,8 @@ in
       enable = true;
 
       defaultApplications = {
-        "video/mp4" = [ "mpv" ];
-        "application/pdf" = [ "firefox" ];
+        "video/mp4" = [ pkgs.mpv ];
+        "application/pdf" = [ pkgs.zathura ];
       };
     };
   };
